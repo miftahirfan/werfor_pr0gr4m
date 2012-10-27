@@ -57,7 +57,12 @@ class Administrasi_InstallController extends Zend_Controller_Action
         endswitch;
     }
 
-
+    public function infoAction()
+    {
+        $this->_helper->layout->disableLayout(true);
+        $this->_helper->ViewRenderer->setNoRender(true);
+        phpinfo();
+    }
 }
 
 
