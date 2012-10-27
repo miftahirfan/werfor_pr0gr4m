@@ -1,0 +1,171 @@
+---
+actAs:
+    Timestampable:
+
+Administrasi_Model_Pasien:
+    tableName: pasien
+    columns:
+        nama:
+            type: string(40)
+            notnull: true
+        tgllahir:
+            type: date
+        jnskelamin:
+            type: enum
+            values: [L, P]
+        goldarah:
+            type: enum
+            values: [A, B, AB, 0]
+        alamat:
+            type: string(255)
+        telepon: string(15)
+        email: string(50)
+        catatan: string(255)
+
+Administrasi_Model_Periksa:
+    tableName: periksa
+    columns:
+        pasien_id:
+            type: integer(6)
+            notnull: true
+        type_pemeriksaan: string(30)
+        no_urut:
+          type: integer(4)
+          notnull: true
+        penyakit:
+            type: string(30)
+        referensi_riwayat:
+          type: integer(6)
+        diagnosa: string(255)
+        pengobatan:
+            type: string(255)
+        catatan: string(255)
+        status:
+          type: boolean
+          default: 0
+    relations:
+      Pasien:
+        class: Administrasi_Model_Pasien
+        local: pasien_id
+        foreign: id
+        
+Administrasi_Model_PeriksaObat:
+  tableName: periksa_obat
+  columns:
+    periksa_id:
+      type: integer(6)
+      notnull: true
+    obat:
+      type: string(30)
+    dosis: string(255)
+  relations:
+    Periksa::
+      class: Administrasi_Model_Periksa
+      local: periksa_id
+      foreign: id
+
+Administrasi_Model_PeriksaKeluhan:
+  tableName: periksa_keluhan
+  columns:
+    periksa_id:
+      type: integer(6)
+      notnull: true
+    keluhan:
+      type: string(255)
+      notnull: true
+    diagnosa:
+      type: string(255)
+    pengobatan:
+      type: string(255)
+  relations:
+    Periksa:
+      class: Administrasi_Model_Periksa
+      local: periksa_id
+      foreign: id
+      
+Administrasi_Model_PeriksaDiagnosa:
+  tableName: periksa_diagnosa
+  columns:
+    pemeriksaan:
+      type: string(30)
+      notnull: true
+    periksa_id:
+      type: integer(6)
+      notnull: true
+    hasil:
+      type: string(100)
+      notnull: true
+    catatan: string(255)
+  relations:
+    Periksa:
+      class: Administrasi_Model_Periksa
+      local: periksa_id
+      foreign: id
+
+Administrasi_Model_PeriksaResep:
+  tableName: periksa_resep
+  columns:
+    periksa_id:
+      type: integer(6)
+      notnull: true
+    resep_name: string(100)
+    resep_path: string(100)
+  relations:
+    Periksa:
+      class: Administrasi_Model_Periksa
+      local: periksa_id
+      foreign: id
+
+Administrasi_Model_PasienAlergi:
+    tableName: pasien_alergi
+    columns:
+        pasien_id:
+            type: integer(6)
+            notnull: true
+        alergi:
+            type: string(30)
+        catatan: string(255)
+    relations:
+      Pasien:
+        class: Administrasi_Model_Pasien
+        local: pasien_id
+        foreign: id
+
+Administrasi_Model_DaftarObat:
+  tableName: daftar_obat
+  columns:
+    nama:
+      type: string(30)
+      notnull: true
+      unique: true
+    code:
+      type: string(30)
+      notnull: true
+      unique: true
+    type_obat: string(25)
+    produsen:
+      type: string(30)
+      notnull: true
+    isgeneric:
+      type: boolean
+      default: 0
+      
+Administrasi_Model_DaftarAlergi:
+  tableName: daftar_alergi
+  columns:
+    nama: 
+      type: string(30)
+      notnull: true
+      unique: true
+    catatan: string(255)
+    
+Administrasi_Model_DaftarRs:
+  tableName: daftar_rs
+  columns:
+    nama:
+      type: string(30)
+      notnull: true
+    alamat: string(255)
+    kelas: string(10)
+      
+      
