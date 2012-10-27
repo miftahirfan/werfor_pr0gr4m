@@ -1,0 +1,30 @@
+<? $this->headTitle('Install - User Admin') ?>
+<div class="row-fluid">
+    <div class="span2">
+<!--Sidebar content-->
+    </div>
+    <div class="span10">
+        <?= $this->form ? $this->form : '' ?>
+    </div>
+</div>
+
+
+<? $this->headScript()->captureStart() ?>
+$(function(){
+    $('#init-user').validate({
+        submitHandler: function(form){
+            $(form).ajaxSubmit({
+                success: function(data){
+                    $(form).resetForm();
+                    var obj = $.parseJSON(data);
+                    if(obj.warning){
+                        console.log('raised error');
+                    }else{
+                        window.location.href= "/";
+                    }
+                }
+            });
+        }
+    });
+})
+<? $this->headScript()->captureEnd() ?>

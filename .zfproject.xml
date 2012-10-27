@@ -56,8 +56,14 @@
               <actionMethod actionName="index"/>
               <actionMethod actionName="xhr"/>
             </controllerFile>
+            <controllerFile controllerName="Install">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="xhr"/>
+            </controllerFile>
           </controllersDirectory>
-          <formsDirectory enabled="false"/>
+          <formsDirectory>
+            <formFile formName="AdminUser"/>
+          </formsDirectory>
           <layoutsDirectory enabled="false"/>
           <modelsDirectory/>
           <servicesDirectory enabled="false"/>
@@ -67,6 +73,12 @@
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Index">
+                <viewScriptFile forActionName="xhr"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Install">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Install">
                 <viewScriptFile forActionName="xhr"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
@@ -134,6 +146,10 @@
           <testApplicationModuleDirectory forModuleName="administrasi">
             <testApplicationControllerDirectory>
               <testApplicationControllerFile forControllerName="Index">
+                <testApplicationActionMethod forActionName="index"/>
+                <testApplicationActionMethod forActionName="xhr"/>
+              </testApplicationControllerFile>
+              <testApplicationControllerFile forControllerName="Install">
                 <testApplicationActionMethod forActionName="index"/>
                 <testApplicationActionMethod forActionName="xhr"/>
               </testApplicationControllerFile>
