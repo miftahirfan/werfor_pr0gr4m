@@ -168,4 +168,18 @@ Administrasi_Model_DaftarRs:
     alamat: string(255)
     kelas: string(10)
       
-      
+Administrasi_Model_User: 
+  tableName: user
+  columns:
+    username:
+      type: string(30)
+      notnull: true
+      unique: true
+    password:
+      type: string(100)
+      notnull: true
+    namalengkap:
+      type: string(30)
+    role:
+      type: string(20)
+  
