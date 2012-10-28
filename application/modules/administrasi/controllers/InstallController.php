@@ -13,7 +13,8 @@ class Administrasi_InstallController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $user = Doctrine_Core::getTable('Administrasi_Model_User')->findAll();
+        //$user = Doctrine_Core::getTable('Administrasi_Model_User')->findAll();
+        $user = false;
         if(count($user)):
             $this->_redirect('/');
         else:
