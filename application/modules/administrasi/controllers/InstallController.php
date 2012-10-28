@@ -18,8 +18,9 @@ class Administrasi_InstallController extends Zend_Controller_Action
         if(count($user)):
             $this->_redirect('/');
         else:
-            $form = new Administrasi_Form_AdminUser();
-            $form->setAction('/install/xhr/do/init-user/format/html');
+            //$form = new Administrasi_Form_AdminUser();
+            //$form->setAction('/install/xhr/do/init-user/format/html');
+            $form = "test";
             $this->view->form = $form;
         endif;
         
