@@ -1,6 +1,6 @@
 <?php
 
-class Administrasi_Form_AdminUser extends Zend_Form
+class Administrasi_Form_AdminUser extends EasyBib_Form
 {
 
     public function init()
