@@ -45,7 +45,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         
         $view->addHelperPath('ZendX/JQuery/View/Helper', 'ZendX_JQuery_View_Helper');
         $view->addHelperPath('EasyBib/View/Helper', 'EasyBib_View_Helper');
-        $view->addHelperPath('Vx/View/Helper', 'Vx_View_Helper');
+        //$view->addHelperPath('Vx/View/Helper', 'Vx_View_Helper');
 
         $view->JQuery()->setLocalPath($view->baseUrl('js/jquery-1.8.2.min.js'))->enable();
         
