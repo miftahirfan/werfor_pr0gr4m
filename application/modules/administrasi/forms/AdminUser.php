@@ -31,9 +31,9 @@ class Administrasi_Form_AdminUser extends EasyBib_Form
             'attribs' => array('class' => 'btn btn-large btn-default'),
             'ignore' => true));
 
-        //$this->addDisplayGroup(array('username', 'namalengkap', 'password', 'confirm',  'submit'), 'user-data');
-        //$this->getDisplayGroup('user-data')->setLegend('Admin User');
-        //EasyBib_Form_Decorator::setFormDecorator($this, EasyBib_Form_Decorator::BOOTSTRAP, 'submit');
+        $this->addDisplayGroup(array('username', 'namalengkap', 'password', 'confirm',  'submit'), 'user-data');
+        $this->getDisplayGroup('user-data')->setLegend('Admin User');
+        EasyBib_Form_Decorator::setFormDecorator($this, EasyBib_Form_Decorator::BOOTSTRAP, 'submit');
     }
 
 
