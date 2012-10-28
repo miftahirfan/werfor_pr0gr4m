@@ -63,6 +63,11 @@
           </controllersDirectory>
           <formsDirectory>
             <formFile formName="AdminUser"/>
+            <formFile formName="PasienDaftar"/>
+            <formFile formName="DaftarObat"/>
+            <formFile formName="DaftarPenyakit"/>
+            <formFile formName="DaftarAlergi"/>
+            <formFile formName="DaftarRs"/>
           </formsDirectory>
           <layoutsDirectory enabled="false"/>
           <modelsDirectory/>

@@ -1,4 +1,28 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Index</b> and script/action name <b>index</b></p>
+<div class="row-fluid">
+    <div class="span2">
+            <ul class="nav nav-list">
+                <li class="nav-header">Administrasi Pasien</li>
+                <li class="active"><a href="#">Pendaftaran</a></li>
+                <li><a href="#">Pasien hari Ini</a></li>
+                <li class="nav-header">Administrasi Internal</li>
+                <li><a href="#">Daftar Obat</a></li>
+                <li><a href="#">Daftar Penyakit</a></li>
+                <li><a href="#">Daftar Alergi</a></li>
+                <li><a href="#">Daftar RS</a></li>
+            </ul>
+    </div>
+    <div id="main-content" class="span10">
+        <?= $this->form ?>
+    </div>
+    <div id="ajax-cotent" class="span10"></div>
 </div>
+
+<? $this->headScript()->captureStart() ?>
+$(function(){
+    $('#tgllahir').datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "yy-mm-dd"
+    });
+})
+<? $this->headScript()->captureEnd() ?>

@@ -38,7 +38,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
         $view->headLink()->headLink(array('rel' => 'favicon', 'href'=> '/favicon.ico','type' => 'image/x-icon'), 'PREPEND');
 
-        $view->headLink()->appendStylesheet($view->baseUrl('css/reset.css'));
         $view->headLink()->appendStylesheet($view->baseUrl('css/bootstrap.min.css'));
         $view->headLink()->appendStylesheet($view->baseUrl('css/bootstrap-responsive.min.css'));
         $view->headLink()->appendStylesheet($view->baseUrl('css/style.css'));
