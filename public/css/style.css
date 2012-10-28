@@ -5,3 +5,6 @@
     Description:
         Purpose of the stylesheet follows.
 */
+textarea{
+    height: 75px;
+}
