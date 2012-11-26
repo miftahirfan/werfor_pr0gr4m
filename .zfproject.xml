@@ -60,6 +60,11 @@
               <actionMethod actionName="index"/>
               <actionMethod actionName="xhr"/>
             </controllerFile>
+            <controllerFile controllerName="Login">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="off"/>
+              <actionMethod actionName="xhr"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory>
             <formFile formName="AdminUser"/>
@@ -68,6 +73,7 @@
             <formFile formName="DaftarPenyakit"/>
             <formFile formName="DaftarAlergi"/>
             <formFile formName="DaftarRs"/>
+            <formFile formName="Login"/>
           </formsDirectory>
           <layoutsDirectory enabled="false"/>
           <modelsDirectory/>
@@ -84,6 +90,15 @@
                 <viewScriptFile forActionName="index"/>
               </viewControllerScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Install">
+                <viewScriptFile forActionName="xhr"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
+                <viewScriptFile forActionName="off"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Login">
                 <viewScriptFile forActionName="xhr"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
@@ -156,6 +171,11 @@
               </testApplicationControllerFile>
               <testApplicationControllerFile forControllerName="Install">
                 <testApplicationActionMethod forActionName="index"/>
+                <testApplicationActionMethod forActionName="xhr"/>
+              </testApplicationControllerFile>
+              <testApplicationControllerFile forControllerName="Login">
+                <testApplicationActionMethod forActionName="index"/>
+                <testApplicationActionMethod forActionName="off"/>
                 <testApplicationActionMethod forActionName="xhr"/>
               </testApplicationControllerFile>
             </testApplicationControllerDirectory>
